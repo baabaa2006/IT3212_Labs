@@ -1,25 +1,22 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Lab02_OOPBasics
 {
-    public class SinhVien
+    public class SinhVien : Nguoi, IValidatable, IPrintable
     {
         public string MaSV { get; set; }
-     
-        public DateTime NgaySinh { get; set; }
-
-        private string _hoTen;
         private double _diemTB;
         public string HoTen
         {
-            get { return _hoTen; }
+            get { return HoTen; }
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                     throw new ArgumentException("Họ tên không được rỗng.");
-                _hoTen = value.Trim();
+                HoTen = value.Trim();
             }
         }
         public double DiemTB
@@ -37,18 +34,9 @@ namespace Lab02_OOPBasics
             Console.WriteLine("{0} - {1} - {2:dd/MM/yyyy} - {3:N2}",
             MaSV, HoTen, NgaySinh, DiemTB);
         }
-
-        public SinhVien()
-        {
-            MaSV = "Chưa có";
-            HoTen = "Chưa có";
-            NgaySinh = DateTime.Today;
-            DiemTB = 0;
-        }
         public SinhVien(string maSV, string hoTen, DateTime ngaySinh, double diemTB)
+            :base(hoTen,ngaySinh)
         {
-            MaSV = maSV;
-            HoTen = hoTen;
             NgaySinh = ngaySinh;
             DiemTB = diemTB;
         }
@@ -68,6 +56,23 @@ namespace Lab02_OOPBasics
             if (DiemTB >= 5) return "Trung bình";
             return "Yếu";
         }
+        public override string ToString()
+        {
+            return base.MoTa() + "-" + MaSV + "-" + DiemTB.ToString("N2");
+        }
+
+        public bool IsValid(out string message)
+        {
+            if (string.IsNullOrWhiteSpace(MaSV)) { message = "Thiếu mã"; return false; }
+            if (DiemTB < 0 || DiemTB > 10) { message = "Điểm sai"; return false; }
+            message = ""; return true;
+        }
+
+        public string ToDisplayText()
+        {
+            return MaSV + "-" + HoTen;
+        }
+        
     }
 
 

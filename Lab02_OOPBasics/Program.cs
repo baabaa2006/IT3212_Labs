@@ -24,4 +24,17 @@ static void Bai5()
     string ma = Console.ReadLine() ?? "";
     SinhVien ketQua = ds.Find(x => x.MaSV.Equals(ma, StringComparison.OrdinalIgnoreCase));
     Console.WriteLine(ketQua == null ? "Không tìm thấy" : ketQua.HoTen);
+
+    List<NguoiHoc> dsNguoiHoc = new List<NguoiHoc>();
+    dsNguoiHoc.Add(new SinhVienChinhQuy { HoTen = "An", SoTinChi = 18 });
+    dsNguoiHoc.Add(new SinhVienLienThong { HoTen = "Bình", SoTinChi = 15 });
+
+    decimal tong = 0;
+    foreach (NguoiHoc item in dsNguoiHoc)
+    {
+        decimal hocPhi = item.TinhHocPhi();
+        tong += hocPhi;
+        Console.WriteLine("{0}: {1:N0}", item.HoTen, hocPhi);
+    }
+    Console.WriteLine("Tổng học phí: {0:N0}", tong);
 }

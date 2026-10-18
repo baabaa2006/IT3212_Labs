@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Lab01_Console/Lab01_Console.csproj" />
   <Project Path="Lab02_OOPBasics/Lab02_OOPBasics.csproj" Id="eb40c56a-b4a1-405c-a889-72ecedd759b5" />
+  <Project Path="Lab03/Lab03.csproj" Id="83a51703-4982-47a6-96e0-d5fbfdff0c24" />
 </Solution>
