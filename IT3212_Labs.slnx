@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="Lab01_Console/Lab01_Console.csproj" />
-  <Project Path="Lab02_OOPBasics/Lab02_OOPBasics.csproj" Id="eb40c56a-b4a1-405c-a889-72ecedd759b5" />
-  <Project Path="Lab03/Lab03.csproj" Id="83a51703-4982-47a6-96e0-d5fbfdff0c24" />
+  <Project Path="Lab04_WinFormsBasic/Lab04_WinFormsBasic.csproj" Id="00551d41-56e4-4772-a124-3a99399c5b7c" />
+  <Project Path="Lab06_DataControls/Lab06_DataControls.csproj" Id="80d279fc-c84c-4120-8049-43b25767ce43" />
+  <Project Path="Lab07_ADONET_Connection/Lab07_ADONET_Connection.csproj" Id="37355845-3c63-48cf-92e0-50b1bbb91cac" />
 </Solution>
