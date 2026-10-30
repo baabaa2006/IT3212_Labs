@@ -51,7 +51,7 @@ namespace Lab07_ADONET_Connection
                 using (conn)
                 {
                     sw.Start();
-                    conn.Open();                 // đo thời gian mở kết nối
+                    conn.Open();                 
                     sw.Stop();
 
                     lblDataSource.Text = conn.DataSource;
@@ -62,7 +62,6 @@ namespace Lab07_ADONET_Connection
                     lblThoiGian.Text = sw.Elapsed.TotalMilliseconds.ToString("N1") + " ms";
                 }
 
-                // Ra khỏi khối using, kết nối đã được đóng
                 lblStateSauDong.Text = conn.State.ToString();
             }
             catch (ConfigurationErrorsException ex)
@@ -88,5 +87,6 @@ namespace Lab07_ADONET_Connection
             lblThoiGian.Text = sw.Elapsed.TotalMilliseconds.ToString("N1") + " ms (thất bại)";
             lblLoi.Text = thongBao;
         }
+
     }
 }
